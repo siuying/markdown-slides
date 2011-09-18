@@ -1,10 +1,11 @@
 (function() {
   var Controller, root;
   Controller = (function() {
-    function Controller($, hashify, showdown) {
+    function Controller($, hashify, showdown, prettyPrint) {
       var controller;
       this.hashify = hashify;
       this.showdown = showdown;
+      this.prettyPrint = prettyPrint;
       this.md = $("#markdown");
       this.converter = new showdown.converter;
       controller = this;
@@ -33,7 +34,9 @@
         }
         return _results;
       }).call(this);
-      return $("#markup").html(pageHtml.join(''));
+      $("#markup").html(pageHtml.join(''));
+      $("#markup").find("code").addClass('prettyprint');
+      return prettyPrint();
     };
     Controller.prototype.setLocation = function(hash, arg) {};
     return Controller;

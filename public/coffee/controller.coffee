@@ -1,5 +1,5 @@
 class Controller
-  constructor: ($, @hashify, @showdown) ->
+  constructor: ($, @hashify, @showdown, @prettyPrint) ->
     @md = $("#markdown")
     @converter = new showdown.converter
     
@@ -16,10 +16,15 @@ class Controller
     @lastEditorValue = value
   
   render: (value) ->  
+    # Render markdown
     pageHtml = for slideHtml in @converter.makeHtml(value).split("<hr />")
       console.log(slideHtml)
       "<article>#{slideHtml}</article>"
     $("#markup").html(pageHtml.join(''))
+
+    # Prettify Code
+    $("#markup").find("code").addClass('prettyprint')
+    prettyPrint()
 
   setLocation: (hash, arg) ->
 

@@ -6,6 +6,7 @@
     <link rel=stylesheet href="css/hashify-editor.css" />
     <link rel=stylesheet href="css/hashify.css" />
     <link rel=stylesheet href="css/slides.css" />
+    <link rel=stylesheet href="css/prettify/prettify.css" />
   </head>
   <body>
     <div id="sidebar">
@@ -18,7 +19,13 @@
       </div>
       <a id="shorten" href="#shorten">Save. Shorten. Share.</a>
       <div id="credits">
-
+        <h4>Dependencies</h4>
+        <ul>
+          <li><a href="https://bitbucket.org/davidchambers/hashify-editor">Hashify Editor</a></li>
+          <li><a href="http://code.google.com/p/google-code-prettify/">Prettify</a></li>
+          <li><a href="http://davidchambers.bitbucket.org/showdown/">Showdown</a></li>
+        </ul>
+        <p>Copyright 2011 <a href=http://twitter.com/siuying>@siuying</a>.</p>
       </div>
       <div id="dragger"></div>
     </div>
@@ -31,13 +38,11 @@
     <script src="js/showdown.js"></script>
     <script src="js/coffee-script.js"></script>
     <script src="js/jquery-1.6.4.min.js"></script>
+    <script src="js/prettify/prettify.js"></script>
     <script src="js/controller.js"></script>
 
     <script type="text/coffeescript">
-    
-    $ ->
-        console.log("init controller", Controller, Hashify, Showdown)
-        controller = new Controller($, Hashify, Showdown)
+    $ -> new Controller($, Hashify, Showdown, prettyPrint)
     </script>
   </body>
 </html>
