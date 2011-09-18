@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Editor Mode</title>
+    <title>Markdown Slides</title>
     <link rel=stylesheet href="css/hashify-editor.css" />
     <link rel=stylesheet href="css/hashify.css" />
     <link rel=stylesheet href="css/slides.css" />
@@ -36,13 +36,13 @@
     
     <script src="js/hashify-editor.js"></script>
     <script src="js/showdown.js"></script>
-    <script src="js/coffee-script.js"></script>
     <script src="js/jquery-1.6.4.min.js"></script>
     <script src="js/prettify/prettify.js"></script>
     <script src="js/controller.js"></script>
-
-    <script type="text/coffeescript">
-    $ -> new Controller($, Hashify, Showdown, prettyPrint)
+    <script>
+    $(function(){
+      new Controller($, Hashify, Showdown, prettyPrint);
+    });
     </script>
   </body>
 </html>
