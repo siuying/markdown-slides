@@ -6,20 +6,22 @@
       this.hashify = hashify;
       this.showdown = showdown;
       this.prettyPrint = prettyPrint;
-      this.md = $("#markdown");
+      this.editor = $("#markdown");
       this.converter = new showdown.converter;
       controller = this;
-      this.md.keyup(function() {
+      this.editor.keyup(function() {
         if (controller.lastEditorValue !== (controller.lastEditorValue = this.value)) {
-          return controller.updateView(controller.lastEditorValue);
+          controller.updateView(controller.lastEditorValue);
         }
+        return false;
       });
-      this.hashify.editor(this.md[0], false, this.updateView);
+      this.hashify.editor(this.editor[0], false, this.editor[0].onkeyup);
     }
     Controller.prototype.updateView = function(value) {
       this.render(value);
       this.setLocation(this.hashify.encode(value));
-      return this.lastEditorValue = value;
+      this.lastEditorValue = value;
+      return false;
     };
     Controller.prototype.render = function(value) {
       var pageHtml, slideHtml;
@@ -29,7 +31,6 @@
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           slideHtml = _ref[_i];
-          console.log(slideHtml);
           _results.push("<article>" + slideHtml + "</article>");
         }
         return _results;
