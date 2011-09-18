@@ -30,7 +30,7 @@
 
     dragging,
 
-    hashifyMe = 'http://hashify.me/',
+    hashifyMe = 'http://markdown-slide.herokuapp.com/',
 
     hashifyMeLen = hashifyMe.length,
 
