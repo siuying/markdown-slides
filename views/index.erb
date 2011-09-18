@@ -19,11 +19,14 @@
       </div>
       <a id="shorten" href="#shorten">Save. Shorten. Share.</a>
       <div id="credits">
+	    <p>Press "?" for shortcuts.</p>
         <h4>Dependencies</h4>
         <ul>
-          <li><a href="https://bitbucket.org/davidchambers/hashify-editor">Hashify Editor</a></li>
-          <li><a href="http://code.google.com/p/google-code-prettify/">Prettify</a></li>
-          <li><a href="http://davidchambers.bitbucket.org/showdown/">Showdown</a></li>
+          <li><a href=https://bitbucket.org/davidchambers/base64.js>Base64</a></li>
+          <li><a href=https://bitbucket.org/davidchambers/hashify.me>Hashify</a></li>
+          <li><a href=https://bitbucket.org/davidchambers/hashify-editor>Hashify Editor</a></li>
+          <li><a href=http://code.google.com/p/google-code-prettify/>Prettify</a></li>
+          <li><a href=http://davidchambers.bitbucket.org/showdown/>Showdown</a></li>
         </ul>
         <p>Copyright 2011 <a href=http://twitter.com/siuying>@siuying</a>.</p>
       </div>
@@ -33,16 +36,65 @@
       <div id="markup">
       </div>
     </section>
-    
-    <script src="js/hashify-editor.js"></script>
-    <script src="js/showdown.js"></script>
-    <script src="js/jquery-1.6.4.min.js"></script>
-    <script src="js/prettify/prettify.js"></script>
-    <script src="js/controller.js"></script>
+    <div id="kbd-shortcuts">
+      <div>
+        <h1>Keyboard shortcuts</h1>
+        <h2>General shortcuts</h2>
+        <dl>
+          <dt><kbd title="escape">⎋</kbd></dt>
+          <dd>Dismiss this dialog</dd>
+          <dt><kbd>?</kbd></dt>
+          <dd>Invoke this dialog</dd>
+          <dt><kbd title="left arrow">←</kbd></dt>
+          <dd>Conceal editor</dd>
+          <dt><kbd title="right arrow">→</kbd></dt>
+          <dd>Reveal editor</dd>
+        </dl>
+        <h2>Editor shortcuts</h2>
+        <dl>
+          <dt><kbd>#</kbd></dt>
+          <dd>Cycle heading level</dd>
+          <dt><kbd>&gt;</kbd></dt>
+          <dd>Toggle “blockquote”</dd>
+          <dt><kbd>_</kbd></dt>
+          <dd>Toggle “em”</dd>
+          <dt><kbd>*</kbd></dt>
+          <dd>Toggle “strong”</dd>
+          <dt><kbd>`</kbd></dt>
+          <dd>Toggle “code”</dd>
+          <dt data-keys="2"><kbd title="alt">⌥</kbd><kbd title="tab">⇥</kbd></dt>
+          <dd>Insert four spaces</dd>
+        </dl>
+      </div>
+    </div>
+    <div id="mask"></div>
+    <script src="js/LAB.js"></script>
     <script>
-    $(function(){
-      new Controller($, Hashify, Showdown, prettyPrint);
-    });
+		$LAB
+         .script('/js/jquery-1.6.4.min.js').wait(function(){ jQuery.noConflict(); })
+         .script('/js/prettify/prettify.js')
+         .script('/js/base64.js')
+         .script('/js/showdown.js').wait()
+         .script('/js/datetimes.js')
+         .script('/js/abbreviations.js')
+         .script('/js/hashify-editor.js').wait()
+         .script('/js/hashify.js').wait(function(){
+	
+	jQuery(document).keydown(function(e){
+		var editor = jQuery("#editor")[0];
+		if ((e.target || e.srcElement) !== editor && Hashify.isPresentationMode()) {
+			switch (e.keyCode) {
+		        case 38: // up arrow
+				  console.log("up")
+		          break;
+		        case 40: // down arrow
+				  console.log("down")
+		          break;
+	        }
+		}
+	});
+
+});
     </script>
   </body>
 </html>
