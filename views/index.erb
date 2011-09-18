@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Editor Mode</title>
+    <link rel=stylesheet href="css/hashify-editor.css" />
+    <link rel=stylesheet href="css/hashify.css" />
+    <link rel=stylesheet href="css/slides.css" />
+  </head>
+  <body>
+    <div id="sidebar">
+      <div id="editor">
+        <textarea id="markdown"></textarea>
+        <div id="counter"></div>
+      </div>
+      <div id="wrapper">
+        <a id="qrcode">QR code</a>
+      </div>
+      <a id="shorten" href="#shorten">Save. Shorten. Share.</a>
+      <div id="credits">
+
+      </div>
+      <div id="dragger"></div>
+    </div>
+    <section class='slides layout-regular template-default'>
+      <div id="markup">
+      </div>
+    </section>
+    
+    <script src="js/hashify-editor.js"></script>
+    <script src="js/showdown.js"></script>
+    <script src="js/coffee-script.js"></script>
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script src="js/controller.js"></script>
+
+    <script type="text/coffeescript">
+    
+    $ ->
+        console.log("init controller", Controller, Hashify, Showdown)
+        controller = new Controller($, Hashify, Showdown)
+    </script>
+  </body>
+</html>
