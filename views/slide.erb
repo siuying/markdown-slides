@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Presentation</title>
+    <meta charset='utf-8'>
+  </head>
+
+  <style>
+  </style>
+
+  <body style='display: none'>
+    <section class='slides layout-regular template' id="markup">
+    </section>
+    <script src="/js/LAB.js"></script>
+    <script>
+		$LAB
+         .script('/js/prettify/prettify.js')
+         .script('/js/base64.js')
+         .script('/js/google-slides.js')
+         .script('/js/showdown.js').wait()
+         .script('/js/datetimes.js')
+         .script('/js/abbreviations.js')
+         .script('/js/hashify-editor.js').wait()
+         .script('/js/hashify-slides.js').wait(function(){ 
+           handleDomLoaded(); 
+          });
+    </script>
+  </body>
+</html>

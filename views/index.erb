@@ -19,7 +19,8 @@
       </div>
       <a id="shorten" href="#shorten">Save. Shorten. Share.</a>
       <div id="credits">
-	    <p>Press "?" for shortcuts.</p>
+        <button type="button" id="present">Presentation Mode</button>
+        <br/>
         <h4>Dependencies</h4>
         <ul>
           <li><a href=https://bitbucket.org/davidchambers/base64.js>Base64</a></li>
@@ -32,9 +33,7 @@
       </div>
       <div id="dragger"></div>
     </div>
-    <section class='slides layout-regular template-default'>
-      <div id="markup">
-      </div>
+    <section class='slides layout-regular template' id="markup">
     </section>
     <div id="kbd-shortcuts">
       <div>
@@ -79,22 +78,13 @@
          .script('/js/abbreviations.js')
          .script('/js/hashify-editor.js').wait()
          .script('/js/hashify.js').wait(function(){
-	
-	jQuery(document).keydown(function(e){
-		var editor = jQuery("#editor")[0];
-		if ((e.target || e.srcElement) !== editor && Hashify.isPresentationMode()) {
-			switch (e.keyCode) {
-		        case 38: // up arrow
-				  console.log("up")
-		          break;
-		        case 40: // down arrow
-				  console.log("down")
-		          break;
-	        }
-		}
-	});
-
-});
+           jQuery("#present").click(function(e){
+             var match = /^#!\/([^?]*)(\?.*)?$/.exec(window.location.hash);
+             match = match || [null, location.pathname.substr(1), location.search];
+             window.location = "/s/" + match[1];
+             return false;
+           })
+         });
     </script>
   </body>
 </html>
