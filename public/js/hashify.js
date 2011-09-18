@@ -1,4 +1,4 @@
-(function (document, window, JSON, Math, jQuery) {
+(function (document, window, JSON, Math) {
 
   var
 
@@ -656,4 +656,4 @@
     ready();
   }
 
-}(document, window, window.JSON, Math, jQuery));
+}(document, window, window.JSON, Math));
