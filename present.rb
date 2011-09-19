@@ -6,10 +6,10 @@ get '/' do
   erb :index
 end
 
-get '/s/:data' do
+get %r{/s/(.+)} do
   erb :slide
 end
 
-get '/:data' do
+get %r{/(.+)} do
   erb :index
 end
