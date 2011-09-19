@@ -40,7 +40,7 @@
   letter-spacing: -1px;
 }
 
-b {
+.slides b {
   font-weight: 600;
 }
 
@@ -63,27 +63,27 @@ b {
   color: white;
 }
 
-a {
+.slides a {
   color: rgb(0, 102, 204);
 }
-a:visited {
+.slides a:visited {
   color: rgba(0, 102, 204, .75);
 }
-a:hover {
+.slides a:hover {
   color: black;
 }
 
-p {
+.slides p {
   margin: 0;
   padding: 0;
 
   margin-top: 20px;
 }
-p:first-child {
+.slides p:first-child {
   margin-top: 0;
 }
 
-h1 {
+.slides h1 {
   font-size: 60px;
   line-height: 60px;
 
@@ -99,7 +99,7 @@ h1 {
   color: rgb(51, 51, 51);
 }
 
-h2 {
+.slides h2 {
   font-size: 45px;
   line-height: 45px;
 
@@ -117,7 +117,7 @@ h2 {
   color: rgb(51, 51, 51);
 }
 
-h3 {
+.slides h3 {
   font-size: 30px;
   line-height: 36px;
 
@@ -132,7 +132,7 @@ h3 {
   color: rgb(51, 51, 51);
 }
 
-article.fill h3 {
+.slides article.fill h3 {
   background: rgba(255, 255, 255, .75);
   padding-top: .2em;
   padding-bottom: .3em;
@@ -143,7 +143,7 @@ article.fill h3 {
   padding-right: 60px;
 }
 
-ul {
+.slides ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -152,19 +152,19 @@ ul {
 
   margin-left: .75em;
 }
-ul:first-child {
+.slides ul:first-child {
   margin-top: 0;
 }
-ul ul {
+.slides ul ul {
   margin-top: .5em;
 }
-li {
+.slides li {
   padding: 0;
   margin: 0;
 
   margin-bottom: .5em;
 }
-li::before {
+.slides li::before {
   content: '·';
 
   width: .75em;
@@ -173,7 +173,7 @@ li::before {
   position: absolute;
 }
 
-pre {
+.slides pre {
   font-family: 'Droid Sans Mono', 'Courier New', monospace;
 
   font-size: 20px;
@@ -193,14 +193,14 @@ pre {
   overflow: hidden;
 }
 
-code {
+.slides code {
   font-size: 95%;
   font-family: 'Droid Sans Mono', 'Courier New', monospace;
 
   color: black;
 }
 
-iframe {
+.slides iframe {
   width: 100%;
 
   height: 620px;
@@ -211,12 +211,12 @@ iframe {
   /*box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);*/
 }
 
-h3 + iframe {
+.slides h3 + iframe {
   margin-top: 40px;
   height: 540px;
 }
 
-article.fill iframe {
+.slides article.fill iframe {
   position: absolute;
   left: 0;
   top: 0;
@@ -234,7 +234,7 @@ article.fill iframe {
   z-index: -1;
 }
 
-article.fill img {
+.slides article.fill img {
   position: absolute;
   left: 0;
   top: 0;
@@ -248,28 +248,28 @@ article.fill img {
 
   z-index: -1;
 }
-img.centered {
+.slides img.centered {
   margin: 0 auto;
   display: block;
 }
 
-table {
+.slides table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 40px;
 }
-th {
+.slides th {
   font-weight: 600;
   text-align: left;
 }
-td,
-th {
+.slides td,
+.slides th {
   border: 1px solid rgb(224, 224, 224);
   padding: 5px 10px;
   vertical-align: top;
 }
 
-.source {
+.slides .source {
   position: absolute;
   left: 60px;
   top: 644px;
@@ -280,7 +280,7 @@ th {
   line-height: 18px;
 }
 
-q {
+.slides q {
   display: block;
   font-size: 60px;
   line-height: 72px;
@@ -290,7 +290,7 @@ q {
   margin-top: 100px;
   margin-right: 150px;    
 }
-q::before {
+.slides q::before {
   content: '“';
   
   position: absolute;
@@ -302,7 +302,7 @@ q::before {
   font-size: 90px;
   color: rgb(192, 192, 192);
 }
-q::after {
+.slides q::after {
   content: '”';
 
   position: absolute;  
@@ -311,14 +311,14 @@ q::after {
   font-size: 90px;
   color: rgb(192, 192, 192);  
 }
-div.author {
+.slides div.author {
   text-align: right;  
   font-size: 40px;
   
   margin-top: 20px;
   margin-right: 150px;    
 }
-div.author::before {
+.slides div.author::before {
   content: '—';
 }
 
