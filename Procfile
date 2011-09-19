@@ -1,1 +1,1 @@
-web: bundle exec ruby present.rb -p $PORT
+web: bundle exec thin start -p $PORT -e production
